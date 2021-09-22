@@ -40,12 +40,12 @@ body {
   border-radius: 3px !important;
   margin-right: 20px !important;
   border: none !important;
-  height: 35px !important;
+  height: 40px !important;
   cursor: pointer !important;
 }
 
 .ws {
-  width: 130px !important;
+  width: 155px !important;
 }
 
 .auto {
@@ -65,4 +65,8 @@ body {
 .btn-reg {
   background-color: #d60000;
   color: white;
+}
+
+.p-e {
+  cursor: pointer;
 }
