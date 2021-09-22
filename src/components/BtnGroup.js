@@ -2,6 +2,57 @@ import React, { useState } from "react";
 import { Modal, Form } from "react-bootstrap";
 import { useHistory } from "react-router";
 
+function ModalLogin(props) {
+  let history = useHistory();
+
+  const handleLink = () => {
+    history.push("/");
+  };
+
+  return (
+    <div>
+      <Modal {...props} centered size="sm">
+        <Modal.Body>
+          <Modal.Title
+            id="contained-modal-title-vcenter"
+            className="mb-4 fw-bold"
+          >
+            Sign In
+          </Modal.Title>
+          <Form>
+            <Form.Group className="mb-3">
+              <Form.Control type="email" id="email" placeholder="Email" />
+            </Form.Group>
+            <Form.Group className="mb-4">
+              <Form.Control
+                type="password"
+                id="password"
+                placeholder="Password"
+              />
+            </Form.Group>
+            <button
+              className="btn-reg auto mb-3"
+              type="submit"
+              onClick={handleLink}
+            >
+              Sign In
+            </button>
+            <p className="text-center">
+              Don't have an account? Klik
+              <span
+                className="fw-bold p-e"
+                onClick={() => props.onRedirectRegis()}
+              >
+                &nbsp;Here
+              </span>
+            </p>
+          </Form>
+        </Modal.Body>
+      </Modal>
+    </div>
+  );
+}
+
 function ModalRegister(props) {
   let history = useHistory();
 
@@ -93,11 +144,11 @@ export default function BtnGroup() {
       >
         Sign In
       </button>
-      {/* <ModalLogin
+      <ModalLogin
         show={modalLogin}
         onHide={() => setModalLogin(false)}
         onRedirectRegis={RedirectToRegis}
-      /> */}
+      />
     </div>
   );
 }
