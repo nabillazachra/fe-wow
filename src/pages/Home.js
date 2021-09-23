@@ -1,11 +1,16 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 
 export default function Home() {
   return (
     <Container>
-      <Navigation />
+      <Row>
+        <Col>
+          <Navigation />
+        </Col>
+        <Col>text</Col>
+      </Row>
     </Container>
   );
 }

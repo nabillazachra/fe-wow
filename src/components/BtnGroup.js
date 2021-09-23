@@ -6,7 +6,7 @@ function ModalLogin(props) {
   let history = useHistory();
 
   const handleLink = () => {
-    history.push("/");
+    history.push("/home");
   };
 
   return (
@@ -57,7 +57,7 @@ function ModalRegister(props) {
   let history = useHistory();
 
   const handleLink = () => {
-    history.push("/");
+    history.push("/home");
   };
 
   return (
