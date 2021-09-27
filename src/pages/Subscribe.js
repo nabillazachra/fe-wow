@@ -34,7 +34,6 @@ export default function Subscribe() {
 
   const handleSubscibeSubmit = (e) => {
     e.preventDefault();
-    console.log(subscibeState);
     setModalShow(true);
   };
 

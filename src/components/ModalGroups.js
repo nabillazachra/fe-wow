@@ -24,6 +24,7 @@ function ModalLogin(props) {
       type: "LOGIN_SUCCESS",
       payload: data,
     });
+    console.log(state);
 
     if (data.email !== "" && data.password !== "") {
       data.isLogin = true;
@@ -98,6 +99,7 @@ function ModalRegister(props) {
       type: "LOGIN_SUCCESS",
       payload: data,
     });
+    console.log(state);
 
     if (data.email !== "" && data.password !== "") {
       data.isLogin = true;
