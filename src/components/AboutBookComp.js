@@ -13,7 +13,7 @@ function ModalSubscribe(props) {
       <Modal {...props} size="lg">
         <Modal.Body>
           <span className="text-danger w-50 text-center">
-            Please subscribe to our premium so you can add to My List.
+            Please make a payment to read the latest book
           </span>
         </Modal.Body>
       </Modal>
