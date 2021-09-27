@@ -15,7 +15,6 @@ function ModalLogin(props) {
     const password = document.getElementById("password").value;
 
     const data = {
-      isLogin: true,
       email,
       password,
       fullname: "Fullname",
@@ -90,7 +89,6 @@ function ModalRegister(props) {
     const fullname = document.getElementById("fullname").value;
 
     const data = {
-      isLogin: true,
       email,
       password,
       fullname,
