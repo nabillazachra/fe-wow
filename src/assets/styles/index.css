@@ -1,10 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
 body {
   box-sizing: border-box !important;
-  padding: 0 !important;
-  margin: 0 !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
   background-color: #f2f2f2 !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
 .landing {
@@ -48,10 +49,12 @@ body {
   width: 155px !important;
 }
 
-.auto {
+.w-auto {
   width: 100% !important;
+}
+
+.auto {
   border-radius: 3px !important;
-  margin-right: 20px !important;
   border: none !important;
   height: 35px !important;
   cursor: pointer !important;
@@ -130,12 +133,21 @@ body {
 }
 
 .cont {
-  margin-left: 15%;
-  padding-top: 10%;
+  margin-left: 11%;
+  padding-top: 3%;
   height: 100vh;
 }
 
 .dc {
   width: 400px;
   margin: auto;
+}
+
+.wd-a {
+  width: 100%;
+  height: auto;
+}
+
+.bg {
+  background: #ffd9d9 !important;
 }

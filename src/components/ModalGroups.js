@@ -1,12 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Modal, Form } from "react-bootstrap";
 import { useHistory } from "react-router";
+
+import { UserContext } from "../context/userContext";
 
 function ModalLogin(props) {
   let history = useHistory();
 
-  const handleLink = () => {
-    history.push("/home");
+  const [state, dispatch] = useContext(UserContext);
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    const data = {
+      isLogin: true,
+      email,
+      password,
+      fullname: "Fullname",
+    };
+
+    dispatch({
+      type: "LOGIN_SUCCESS",
+      payload: data,
+    });
+
+    if (data.email !== "" && data.password !== "") {
+      data.isLogin = true;
+      history.push("/home");
+    }
   };
 
   return (
@@ -19,22 +42,24 @@ function ModalLogin(props) {
           >
             Sign In
           </Modal.Title>
-          <Form>
+          <Form onSubmit={handleLoginSubmit}>
             <Form.Group className="mb-3">
-              <Form.Control type="email" id="email" placeholder="Email" />
+              <Form.Control
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+              />
             </Form.Group>
             <Form.Group className="mb-4">
               <Form.Control
                 type="password"
+                name="password"
                 id="password"
                 placeholder="Password"
               />
             </Form.Group>
-            <button
-              className="btn-reg auto mb-3"
-              type="submit"
-              onClick={handleLink}
-            >
+            <button className="btn-reg auto w-100 mb-3" type="submit">
               Sign In
             </button>
             <p className="text-center">
@@ -56,8 +81,30 @@ function ModalLogin(props) {
 function ModalRegister(props) {
   let history = useHistory();
 
-  const handleLink = () => {
-    history.push("/home");
+  const [state, dispatch] = useContext(UserContext);
+
+  const handleRegistSubmit = (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const fullname = document.getElementById("fullname").value;
+
+    const data = {
+      isLogin: true,
+      email,
+      password,
+      fullname,
+    };
+
+    dispatch({
+      type: "LOGIN_SUCCESS",
+      payload: data,
+    });
+
+    if (data.email !== "" && data.password !== "") {
+      data.isLogin = true;
+      history.push("/home");
+    }
   };
 
   return (
@@ -70,29 +117,35 @@ function ModalRegister(props) {
           >
             Sign Up
           </Modal.Title>
-          <Form>
+          <Form onSubmit={handleRegistSubmit}>
             <Form.Group className="mb-3">
-              <Form.Control type="email" id="email" placeholder="Email" />
+              <Form.Control
+                name="email"
+                type="email"
+                id="email"
+                placeholder="Email"
+                required
+              />
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Control
+                name="password"
                 type="password"
                 id="password"
                 placeholder="Password"
+                required
               />
             </Form.Group>
             <Form.Group className="mb-4">
               <Form.Control
+                name="fullname"
                 type="fullname"
                 id="fullname"
                 placeholder="Fullname"
+                required
               />
             </Form.Group>
-            <button
-              className="btn-reg auto mb-3"
-              type="submit"
-              onClick={handleLink}
-            >
+            <button className="btn-reg auto w-100 mb-3" type="submit">
               Sign Up
             </button>
             <p className="text-center">

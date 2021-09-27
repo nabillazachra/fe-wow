@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../assets/img/Icon.png";
-import BtnGroup from "../components/BtnGroup";
+import ModalGroups from "../components/ModalGroups";
 
 export default function landingPage() {
   return (
@@ -14,7 +14,7 @@ export default function landingPage() {
           <br />
           provider in Indonesia
         </p>
-        <BtnGroup />
+        <ModalGroups />
       </div>
     </div>
   );
