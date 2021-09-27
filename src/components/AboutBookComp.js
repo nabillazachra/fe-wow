@@ -12,9 +12,8 @@ function ModalSubscribe(props) {
     <>
       <Modal {...props} size="lg">
         <Modal.Body>
-          <span className="text-success w-50 text-center">
-            Thank you for subscribing to premium, your premium package will be
-            active after our admin approves your transaction, thank you!
+          <span className="text-danger w-50 text-center">
+            Please subscribe to our premium so you can add to My List.
           </span>
         </Modal.Body>
       </Modal>
